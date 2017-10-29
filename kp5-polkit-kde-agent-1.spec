@@ -1,18 +1,18 @@
 # TODO:
 # - libhybris
 #
-%define		kdeplasmaver	5.11.0
+%define		kdeplasmaver	5.11.2
 %define		qtver		5.5.1
 %define		kpname		polkit-kde-agent-1
 #
 Summary:	KDE polkit-kde-agent-1
 Name:		kp5-%{kpname}
-Version:	5.11.0
+Version:	5.11.2
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	6ca498541b83bda62c44d6aba7b4de6a
+# Source0-md5:	da706bdb5da82b96711ad94b2edd0700
 URL:		http://www.kde.org/
 BuildRequires:	Mesa-libEGL-devel
 BuildRequires:	Mesa-libgbm-devel
