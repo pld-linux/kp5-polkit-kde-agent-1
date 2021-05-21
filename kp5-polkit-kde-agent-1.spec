@@ -1,8 +1,5 @@
-# TODO:
-# - libhybris
-#
 %define		kdeplasmaver	5.11.2
-%define		qtver		5.5.1
+%define		qt_ver		5.5.1
 %define		kpname		polkit-kde-agent-1
 #
 Summary:	KDE PolicyKit authentication agent
@@ -15,49 +12,22 @@ Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
 # Source0-md5:	da706bdb5da82b96711ad94b2edd0700
 URL:		https://kde.org/
-BuildRequires:	Mesa-libEGL-devel
-BuildRequires:	Mesa-libgbm-devel
-BuildRequires:	Qt5Core-devel >= %{qtver}
-BuildRequires:	Qt5EventDispatcherSupport-devel >= %{qtver}
-BuildRequires:	Qt5FontDatabaseSupport-devel >= %{qtver}
-#BuildRequires:	Qt5PlatformSupport-devel >= %{qtver}
-BuildRequires:	Qt5ThemeSupport-devel >= %{qtver}
+BuildRequires:	Qt5Core-devel >= %{qt_ver}
+BuildRequires:	Qt5DBus-devel >= %{qt_ver}
+BuildRequires:	Qt5Widgets-devel >= %{qt_ver}
 BuildRequires:	cmake >= 2.8.12
-BuildRequires:	kf5-kcmutils-devel
-BuildRequires:	kf5-kcompletion-devel
-BuildRequires:	kf5-kconfig-devel
-BuildRequires:	kf5-kconfigwidgets-devel
+BuildRequires:	kf5-extra-cmake-modules >= 1.2.0
 BuildRequires:	kf5-kcoreaddons-devel
 BuildRequires:	kf5-kcrash-devel
-BuildRequires:	kf5-kdeclarative-devel
-BuildRequires:	kf5-kglobalaccel-devel
+BuildRequires:	kf5-kdbusaddons-devel
 BuildRequires:	kf5-ki18n-devel
 BuildRequires:	kf5-kiconthemes-devel
-BuildRequires:	kf5-kinit-devel
-BuildRequires:	kf5-kio-devel
-BuildRequires:	kf5-knewstuff-devel
-BuildRequires:	kf5-knotifications-devel
-BuildRequires:	kf5-kpackage-devel
-BuildRequires:	kf5-kservice-devel
-BuildRequires:	kf5-kwayland-devel
 BuildRequires:	kf5-kwidgetsaddons-devel
 BuildRequires:	kf5-kwindowsystem-devel
-BuildRequires:	kf5-kxmlgui-devel
-BuildRequires:	kf5-plasma-framework-devel
-BuildRequires:	kp5-kdecoration-devel
-BuildRequires:	kp5-kscreenlocker-devel
-BuildRequires:	libdrm-devel
-BuildRequires:	libepoxy-devel
-BuildRequires:	libinput-devel
-BuildRequires:	libxcb-devel
-BuildRequires:	rpmbuild(macros) >= 1.164
-BuildRequires:	udev-devel
-BuildRequires:	wayland-devel
-BuildRequires:	xcb-util-cursor-devel
-BuildRequires:	xcb-util-image-devel
-BuildRequires:	xcb-util-keysyms-devel
-BuildRequires:	xcb-util-wm-devel
+BuildRequires:	polkit-qt5-1-devel >= 0.103.0
+BuildRequires:	rpmbuild(macros) >= 1.605
 BuildRequires:	xz
+Requires:	polkit-qt5-1 >= 0.103.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		qt5dir		%{_libdir}/qt5
