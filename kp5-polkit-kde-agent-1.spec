@@ -5,15 +5,16 @@
 %define		qtver		5.5.1
 %define		kpname		polkit-kde-agent-1
 #
-Summary:	KDE polkit-kde-agent-1
+Summary:	KDE PolicyKit authentication agent
+Summary(pl.UTF-8):	Agent uwierzytelniający PolicyKit dla KDE
 Name:		kp5-%{kpname}
 Version:	5.11.2
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
-Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
+Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
 # Source0-md5:	da706bdb5da82b96711ad94b2edd0700
-URL:		http://www.kde.org/
+URL:		https://kde.org/
 BuildRequires:	Mesa-libEGL-devel
 BuildRequires:	Mesa-libgbm-devel
 BuildRequires:	Qt5Core-devel >= %{qtver}
@@ -62,7 +63,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		qt5dir		%{_libdir}/qt5
 
 %description
-KDE Window manager.
+KDE PolicyKit authentication agent.
+
+%description -l pl.UTF-8
+Agent uwierzytelniający PolicyKit dla KDE.
 
 %package devel
 Summary:	Header files for %{kpname} development
@@ -97,9 +101,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
-%post -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
 
 %files -f %{kpname}.lang
 %defattr(644,root,root,755)
