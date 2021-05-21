@@ -68,18 +68,6 @@ KDE PolicyKit authentication agent.
 %description -l pl.UTF-8
 Agent uwierzytelniający PolicyKit dla KDE.
 
-%package devel
-Summary:	Header files for %{kpname} development
-Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kpname}
-Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}-%{release}
-
-%description devel
-Header files for %{kpname} development.
-
-%description devel -l pl.UTF-8
-Pliki nagłówkowe dla programistów używających %{kpname}.
-
 %prep
 %setup -q -n %{kpname}-%{version}
 
