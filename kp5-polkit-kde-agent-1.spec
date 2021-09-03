@@ -1,16 +1,16 @@
-%define		kdeplasmaver	5.11.2
+%define		kdeplasmaver	5.22.5
 %define		qt_ver		5.5.1
 %define		kpname		polkit-kde-agent-1
 #
 Summary:	KDE PolicyKit authentication agent
 Summary(pl.UTF-8):	Agent uwierzytelniający PolicyKit dla KDE
 Name:		kp5-%{kpname}
-Version:	5.11.2
+Version:	5.22.5
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	da706bdb5da82b96711ad94b2edd0700
+# Source0-md5:	e0828df86a323efa24f54a7c48b1a675
 URL:		https://kde.org/
 BuildRequires:	Qt5Core-devel >= %{qt_ver}
 BuildRequires:	Qt5DBus-devel >= %{qt_ver}
@@ -63,5 +63,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{kpname}.lang
 %defattr(644,root,root,755)
 /etc/xdg/autostart/polkit-kde-authentication-agent-1.desktop
-%{_libdir}/polkit-kde-authentication-agent-1
 %{_datadir}/knotifications5/policykit1-kde.notifyrc
+%{systemduserunitdir}/plasma-polkit-agent.service
+%attr(755,root,root) %{_prefix}/libexec/polkit-kde-authentication-agent-1
+%{_desktopdir}/org.kde.polkit-kde-authentication-agent-1.desktop
