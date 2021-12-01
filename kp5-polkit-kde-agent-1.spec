@@ -1,16 +1,16 @@
-%define		kdeplasmaver	5.23.3
+%define		kdeplasmaver	5.23.4
 %define		qt_ver		5.5.1
 %define		kpname		polkit-kde-agent-1
 #
 Summary:	KDE PolicyKit authentication agent
 Summary(pl.UTF-8):	Agent uwierzytelniający PolicyKit dla KDE
 Name:		kp5-%{kpname}
-Version:	5.23.3
+Version:	5.23.4
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	2997b0cb1c0c37748ffe96216a2dedb6
+# Source0-md5:	a4c54e6faa3539f87327fed2957d46e6
 URL:		https://kde.org/
 BuildRequires:	Qt5Core-devel >= %{qt_ver}
 BuildRequires:	Qt5DBus-devel >= %{qt_ver}
